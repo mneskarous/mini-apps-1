@@ -13,4 +13,8 @@ app.use(express.static('client'));
 
 app.listen(port, () => console.log(`app listening on port ${port}`));
 
+app.post('/upload_json', function (req, res) {
+  res.send('POST request to homepage')
+})
+
 module.exports = app;
