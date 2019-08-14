@@ -8,7 +8,7 @@ class App extends React.Component {
 
     this.state = {
 
-    }
+    };
 
   }
 
@@ -17,12 +17,12 @@ class App extends React.Component {
       <div>
         <form method="post" action="/api">
           <div class="field">
-          <label>Data:</label>
-          <input type="text" name="data" id="data" required/>
+            <label>Data:</label>
+            <input type="text" name="data" id="data" required/>
           </div>
-      <div id="submit">
-        <input type="submit" value="Submit"/>
-      </div>
+          <div id="submit">
+            <input type="submit" value="Submit"/>
+          </div>
         </form>
       </div>
     )
