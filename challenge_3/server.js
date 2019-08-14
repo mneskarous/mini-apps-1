@@ -11,16 +11,24 @@ const controller = {
   },
 
   post: (req, res) => {
-    let { name, email, password, addressLine1, addressLine2, city, state, shippingZipCode, phoneNumber, creditCardNumber, expiryDate, cvv, billingZipCode } = req.body;
-    Customers.create(
-      { name, email, password, addressLine1, addressLine2, city, state, shippingZipCode, phoneNumber, creditCardNumber, expiryDate, cvv, billingZipCode }
-    )
-    .then(() => res.status(201).send('POST successful'))
-    .catch(err => console.error(err));
+    const { name, email, password, addressLine1, addressLine2, city, state, shippingZipCode, phoneNumber, creditCardNumber, expiryDate, cvv, billingZipCode } = req.body;
+    Customers
+      .create({ name, email, password, addressLine1, addressLine2, city, state, shippingZipCode, phoneNumber, creditCardNumber, expiryDate, cvv, billingZipCode })
+      .then(() => res.status(201).send('POST successful'))
+      .catch(err => console.error(err));
   },
 
   update: (req, res) => {
-
+    const { name, email, password, addressLine1, addressLine2, city, state, shippingZipCode, phoneNumber, creditCardNumber, expiryDate, cvv, billingZipCode } = req.body;
+    const { id } = req.params;
+    Customers
+      .update({ name, email, password, addressLine1, addressLine2, city, state, shippingZipCode, phoneNumber, creditCardNumber, expiryDate, cvv, billingZipCode }, {
+        where: {
+          id
+        }
+      })
+      .then(() => res.status(202).send('PUT successful'))
+      .catch(err => console.error(err));
   },
 
   delete: (req, res) => {
@@ -40,8 +48,8 @@ router
 
 router
   .route('/:id')
-  // .put(controller.put)
-  // .delete(controller.delete)
+  .put(controller.update)
+  .delete(controller.delete)
 
 
 const bodyParser = require('body-parser');
