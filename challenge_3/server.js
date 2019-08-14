@@ -22,17 +22,17 @@ const controller = {
     const { name, email, password, addressLine1, addressLine2, city, state, shippingZipCode, phoneNumber, creditCardNumber, expiryDate, cvv, billingZipCode } = req.body;
     const { id } = req.params;
     Customers
-      .update({ name, email, password, addressLine1, addressLine2, city, state, shippingZipCode, phoneNumber, creditCardNumber, expiryDate, cvv, billingZipCode }, {
-        where: {
-          id
-        }
-      })
+      .update({ name, email, password, addressLine1, addressLine2, city, state, shippingZipCode, phoneNumber, creditCardNumber, expiryDate, cvv, billingZipCode }, { where: { id } })
       .then(() => res.status(202).send('PUT successful'))
       .catch(err => console.error(err));
   },
 
   delete: (req, res) => {
-
+    const { id } = req.params;
+    Customers
+      .destroy({ where: { id } })
+      .then(() => res.status(203).send('DELETE successful'))
+      .catch(err => console.error(err));
   }
 
 };
