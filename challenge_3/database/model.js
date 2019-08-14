@@ -15,11 +15,11 @@ const Customers = dbConnection.define('customers', {
     type: Sequelize.STRING,
     allowNull: false
   },
-  address_line1: {
+  addressLine1: {
     type: Sequelize.STRING,
     allowNull: false
   },
-  address_line2: {
+  addressLine2: {
     type: Sequelize.STRING,
     allowNull: true
   },
@@ -31,19 +31,19 @@ const Customers = dbConnection.define('customers', {
     type: Sequelize.STRING,
     allowNull: false
   },
-  shipping_zip_code: {
+  shippingZipCode: {
     type: Sequelize.INTEGER,
     allowNull: false
   },
-  phone_number: {
+  phoneNumber: {
     type: Sequelize.STRING,
     allowNull: false
   },
-  credit_card_number: {
-    type: Sequelize.INTEGER,
+  creditCardNumber: {
+    type: Sequelize.BIGINT(20),
     allowNull: false
   },
-  expiry_date: {
+  expiryDate: {
     type: Sequelize.STRING,
     allowNull: false
   },
@@ -51,13 +51,32 @@ const Customers = dbConnection.define('customers', {
     type: Sequelize.INTEGER,
     allowNull: false
   },
-  billing_zip_code: {
+  billingZipCode: {
     type: Sequelize.INTEGER,
     allowNull: false
   }
 }, {
   // options
   timestamps: false
+});
+
+Customers.sync({ force: true }).then(() => {
+  // Now the `users` table in the database corresponds to the model definition
+  return Customers.create({
+    name: 'John Hancock',
+    email: 'jhancock@gmail.com',
+    password: 'firstsig',
+    addressLine1: '123 Fake St.',
+    addressLine2: null,
+    city: 'New York',
+    state: 'NY',
+    shippingZipCode: 10001,
+    phoneNumber: '123-456-7890',
+    creditCardNumber: 4000200060003000, 
+    expiryDate: '01/2040',
+    cvv: 123,
+    billingZipCode: 10001
+  });
 });
 
 module.exports = Customers;
