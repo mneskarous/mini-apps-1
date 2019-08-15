@@ -8,27 +8,33 @@ const ShippingAddressForm = (props) => (
     <form>
         <div>
           <label>Address Line 1</label>
-          <input type="text" id="addressLine1" required></input>
+          <input type="text" id="addressLine1" required
+          onChange={() => {props.handleChange(event)}}></input>
         </div>
         <div>
           <label>Address Line 2</label>
-          <input type="text" id="addressLine2"></input>
+          <input type="text" id="addressLine2"
+          onChange={() => {props.handleChange(event)}}></input>
         </div>
         <div>
           <label>City</label>
-          <input type="text" id="city" required></input>
+          <input type="text" id="city" required
+          onChange={() => {props.handleChange(event)}}></input>
         </div>
         <div>
           <label>State</label>
-          <input type="text" id="state" required></input>
+          <input type="text" id="state" required
+          onChange={() => {props.handleChange(event)}}></input>
         </div>
         <div>
           <label>Zip Code</label>
-          <input type="text" id="shippingZipCode" required></input>
+          <input type="text" id="shippingZipCode" required
+          onChange={() => {props.handleChange(event)}}></input>
         </div>
         <div>
           <label>Phone Number</label>
-          <input type="text" id="phoneNumber" required></input>
+          <input type="text" id="phoneNumber" required
+          onChange={() => {props.handleChange(event)}}></input>
         </div>
       </form>
     </div>

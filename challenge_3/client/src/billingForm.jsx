@@ -8,19 +8,23 @@ const BillingForm = (props) => (
     <form>
       <div>
         <label>Credit Card Number</label>
-        <input type="text" id="creditCardNumber" required></input>
+        <input type="text" id="creditCardNumber" required
+        onChange={() => {props.handleChange(event)}}></input>
       </div>
       <div>
         <label>Expiration Date</label>
-        <input type="text" id="expiryDate" required></input>
+        <input type="text" id="expiryDate" required
+        onChange={() => {props.handleChange(event)}}></input>
       </div>
       <div>
-        <label>CVV</label>
-        <input type="text" id="cvv" required></input>
+        <label>cvv</label>
+        <input type="text" id="cvv" required
+        onChange={() => {props.handleChange(event)}}></input>
       </div>
       <div>
         <label>Billing Zip Code</label>
-        <input type="text" id="billingZipCode" required></input>
+        <input type="text" id="billingZipCode" required
+        onChange={() => {props.handleChange(event)}}></input>
       </div>
     </form>
     </div>
