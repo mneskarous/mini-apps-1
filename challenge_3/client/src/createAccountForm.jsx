@@ -7,24 +7,24 @@ const CreateAccountForm = (props) => (
       <form>
         <div>
           <label>Name</label>
-          <input type="text" id="name" required
+          <input type="text" id="name" value={props.name} required
           onChange={() => {props.handleChange(event)}}></input>
         </div>
         <div>
           <label>Email Address</label>
-          <input type="text" id="email" required
+          <input type="text" id="email" value={props.email} required 
           onChange={() => {props.handleChange(event)}}></input>
         </div>
         <div>
           <label>Password</label>
-          <input type="text" id="password" required
+          <input type="password" id="password" value={props.password} required
           onChange={() => {props.handleChange(event)}}></input>
         </div>
       </form>
     </div>
     <div>
       <button className="btn" type="button" value="create-account"
-      onClick={() => {props.handleClick(event)}}>
+      onClick={() => {props.handleClick(event); props.handleSubmit(event);}}>
       Create Account
       </button>
     </div>
