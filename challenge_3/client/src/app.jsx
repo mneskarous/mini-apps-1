@@ -45,7 +45,7 @@ class App extends React.Component {
   handleChange(event) {
     this.setState({
       input: event.target.value
-    }, () => console.log(this.state.input))
+    }, () => console.log(this.state))
   }
 
   postInfo() {
