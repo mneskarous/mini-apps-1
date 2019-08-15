@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      value: 'checkout'
+      value: ''
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -20,14 +20,27 @@ class App extends React.Component {
     event.preventDefault();
     this.setState({
       value: event.target.value
-    }, console.log(this.state.value));
-
+    }, () => console.log(this.state.value));
   }
 
   render() {
+    const value = this.state.value;
+    let page;
+    if (value === 'checkout') {
+      page = <CreateAccountForm handleClick={this.handleClick}/>
+    } else if (value === 'create-account') {
+      page = <ShippingAddressForm handleClick={this.handleClick}/>
+    } else if (value === 'submit-shipping') {
+      page = <BillingForm handleClick={this.handleClick}/>
+    } else if (value === 'purchase') {
+      page = <ShoppingCart handleClick={this.handleClick}/>
+    } else {
+      page = <ShoppingCart handleClick={this.handleClick}/>
+    }
+        
     return (
       <div>
-        <ShippingAddressForm handleClick={this.handleClick}/>
+        {page}      
       </div>
     )
   }

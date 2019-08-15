@@ -1,14 +1,14 @@
 import React from 'react';
 
-const ShoppingCart = ({ handleClick }) => (
+const ShoppingCart = (props) => (
   <div>
     <h1>Shopping Cart</h1>
     <div>
       <div>Item: Candy Bars</div>
       <div>Quantity: 1000</div>
       <div>
-        <button class="btn" type="button" value="checkout"
-        onClick={() => {handleClick(event)}}>
+        <button className="btn" type="button" value="checkout"
+        onClick={() => {props.handleClick(event)}}>
         Check Out -->
         </button>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BillingForm = ({ handleClick }) => (
+const BillingForm = (props) => (
   <div>
     <h1>Create Account</h1>
     <h3>Please enter your billing information below:</h3>
@@ -25,8 +25,8 @@ const BillingForm = ({ handleClick }) => (
     </form>
     </div>
     <div>
-      <button class="btn" type="button" value="purchase"
-      onClick={() => {handleClick(event)}}>
+      <button className="btn" type="button" value="purchase"
+      onClick={() => {props.handleClick(event)}}>
       Purchase!
       </button>
     </div>

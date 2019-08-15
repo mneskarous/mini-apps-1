@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CreateAccountForm = ({ handleClick }) => (
+const CreateAccountForm = (props) => (
   <div>
     <h1>Create Account</h1>
     <div>
@@ -20,8 +20,8 @@ const CreateAccountForm = ({ handleClick }) => (
       </form>
     </div>
     <div>
-      <button class="btn" type="button" value="create-account"
-      onClick={() => {handleClick(event)}}>
+      <button className="btn" type="button" value="create-account"
+      onClick={() => {props.handleClick(event)}}>
       Create Account
       </button>
     </div>
