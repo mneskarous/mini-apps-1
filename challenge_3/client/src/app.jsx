@@ -13,7 +13,13 @@ class App extends React.Component {
 
     this.state = {
       value: '',
-      input: ''
+      input: '',
+      name: '',
+      email: '',
+      password: '',
+      addressLine1: '',
+      addressLine2: '',
+      
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -33,11 +39,11 @@ class App extends React.Component {
     }, () => console.log(this.state.input))
   }
 
-  // postInfo(info) {
-  //   console.log(info)
-  //   axios
-  //     .post('/api')
-  // }
+  postInfo() {
+    console.log();
+    axios
+      .post('/api')
+  }
 
   render() {
     const value = this.state.value;

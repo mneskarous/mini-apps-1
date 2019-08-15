@@ -32,7 +32,7 @@ const Customers = dbConnection.define('customers', {
     allowNull: false
   },
   shippingZipCode: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull: false
   },
   phoneNumber: {
@@ -40,7 +40,7 @@ const Customers = dbConnection.define('customers', {
     allowNull: false
   },
   creditCardNumber: {
-    type: Sequelize.BIGINT(20),
+    type: Sequelize.STRING,
     allowNull: false
   },
   expiryDate: {
@@ -48,11 +48,11 @@ const Customers = dbConnection.define('customers', {
     allowNull: false
   },
   cvv: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull: false
   },
   billingZipCode: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull: false
   }
 }, {
@@ -70,12 +70,12 @@ Customers.sync({ force: true }).then(() => {
     addressLine2: null,
     city: 'New York',
     state: 'NY',
-    shippingZipCode: 10001,
+    shippingZipCode: '10001',
     phoneNumber: '123-456-7890',
-    creditCardNumber: 4000200060003000, 
+    creditCardNumber: '4000200060003000', 
     expiryDate: '01/2040',
-    cvv: 123,
-    billingZipCode: 10001
+    cvv: '123',
+    billingZipCode: '10001'
   });
 });
 
