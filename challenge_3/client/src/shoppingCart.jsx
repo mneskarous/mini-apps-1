@@ -1,13 +1,17 @@
 import React from 'react';
 
-const ShoppingCart = () => (
+const ShoppingCart = ({ handleClick }) => (
   <div>
     <h1>Shopping Cart</h1>
     <div>
-      <span>Item: Candy Bars / Quantity: 1000</span>
-      <button class="btn" type="button">
-      Check Out -->
-      </button>
+      <div>Item: Candy Bars</div>
+      <div>Quantity: 1000</div>
+      <div>
+        <button class="btn" type="button" value="checkout"
+        onClick={() => {handleClick(event)}}>
+        Check Out -->
+        </button>
+      </div>
     </div>
   </div>
 );

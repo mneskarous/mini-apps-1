@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ShippingAddressForm = () => (
+const ShippingAddressForm = ({ handleClick }) => (
   <div>
     <h1>Shipping Address</h1>
     <h3>Please enter your shipping information below:</h3>
@@ -33,7 +33,8 @@ const ShippingAddressForm = () => (
       </form>
     </div>
     <div>
-      <button class="btn" type="button">
+      <button class="btn" type="button" value="submit-shipping"
+      onClick={() => {handleClick(event)}}>
       Submit Shipping Information
       </button>
     </div>
