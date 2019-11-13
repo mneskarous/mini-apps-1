@@ -21,7 +21,7 @@
     "nodemon": "^1.19.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "sequelize": "^5.15.0"
+    "sequelize": "^5.15.1"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
